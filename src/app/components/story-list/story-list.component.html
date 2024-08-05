@@ -1,0 +1,12 @@
+<div *ngIf="loading">Loading...</div>
+
+<input [(ngModel)]="searchQuery" (ngModelChange)="onSearch($event)" placeholder="Search stories" />
+
+<ul>
+  <li *ngFor="let story of paginatedStories">
+    <app-story-item [story]="story"></app-story-item>
+  </li>
+</ul>
+
+<button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+<button (click)="nextPage()" [disabled]="(currentPage * storiesPerPage) >= stories.length">Next</button>

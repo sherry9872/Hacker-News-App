@@ -1,0 +1,5 @@
+<div *ngIf="story">
+  <h2>{{ story.title }}</h2>
+  <a *ngIf="story.url" [href]="story.url" target="_blank">Read more</a>
+  <span *ngIf="!story.url">No link available</span>
+</div>
